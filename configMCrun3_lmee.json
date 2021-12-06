@@ -92,7 +92,7 @@
         "cfgMuonCuts": "muonQualityCuts,muonTightQualityCutsForTests",
         "cfgBarrelLowPt": "1.0",
         "cfgMuonLowPt": "1.0",
-        "cfgMCsignals": "eFromHb,eFromHc,eFromNonPromptHc,eeFromCC,eeFromBB,eeFromBtoC,eeFromBandBtoC,eeFromSingleBandBtoC",
+        "cfgMCsignals": "eFromHb,eFromHc,eFromNonPromptHc",
         "cfgIsRun2": "false",
         "cfgNoQA": "false",
         "cfgDetailedQA": "true",
