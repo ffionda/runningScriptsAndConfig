@@ -19,12 +19,9 @@
 #include "TFile.h"
 #include "TTree.h"
 #include "TH1F.h"
-#ifdef NDEBUG
-#undef NDEBUG
-#endif
 #include <cassert>
 #include "FairLogger.h"
-#include "DetectorsCommonDataFormats/NameConf.h"
+#include "CommonUtils/NameConf.h"
 
 int checkStackDQ(Bool_t midysim=kTRUE)
 {
