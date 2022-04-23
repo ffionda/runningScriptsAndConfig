@@ -22,7 +22,7 @@ ${O2DPG_ROOT}/MC/bin/o2dpg_sim_workflow.py --noIPC 1 -eCM 900 -gen external -j $
     -mod "--skipModules ZDC" \
     -confKey "GeneratorExternal.fileName=${O2DPG_ROOT}/MC/config/PWGDQ/external/generator/GeneratorCocktailPromptCharmoniaToMuonEvtGen_pp13TeV.C;GeneratorExternal.funcName=GeneratorCocktailPromptCharmoniaToMuonEvtGen_pp13TeV();Diamond.width[2]=6"         \
     -genBkg pythia8 -procBkg cdiff -colBkg pp --embedding -nb ${NBKGEVENTS} \
-    -confKeyBkg "Diamond.width[2]=6" -interactionRate 2000 --mft-reco-full
+    -confKeyBkg "Diamond.width[2]=6" -interactionRate 2000 --mft-reco-full --mft-assessment-full --fwdmatching-assessment-full
 
 export FAIRMQ_IPC_PREFIX=./
 # run workflow (highly-parallel)

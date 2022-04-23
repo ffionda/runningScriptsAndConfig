@@ -21,7 +21,7 @@ export ALICEO2_CCDB_LOCALCACHE=$PWD/.ccdb
 ${O2DPG_ROOT}/MC/bin/o2dpg_sim_workflow.py --noIPC 1  -eCM 900 -gen external -j ${NWORKERS} -ns ${NSIGEVENTS} -tf ${NTIMEFRAMES} -e TGeant4 -mod "--skipModules ZDC" \
         -trigger "external" -ini $O2DPG_ROOT/MC/config/PWGDQ/ini/GeneratorHF_bbbar_fwdy.ini  \
         -genBkg pythia8 -procBkg inel -colBkg pp --embedding -nb ${NBKGEVENTS} \
-    -confKeyBkg "Diamond.width[2]=6" -interactionRate 2000 --mft-reco-full
+    -confKeyBkg "Diamond.width[2]=6" -interactionRate 2000 --mft-reco-full --mft-assessment-full --fwdmatching-assessment-full
 
 export FAIRMQ_IPC_PREFIX=./
 # run workflow (highly-parallel)
