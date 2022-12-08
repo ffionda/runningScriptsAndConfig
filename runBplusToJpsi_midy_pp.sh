@@ -17,12 +17,13 @@ NTIMEFRAMES=${NTIMEFRAMES:-5}
 # ----------- SETUP LOCAL CCDB CACHE --------------------------
 export ALICEO2_CCDB_LOCALCACHE=$PWD/.ccdb
 
-${O2DPG_ROOT}/MC/bin/o2dpg_sim_workflow.py -eCM 13600 -gen external -j ${NWORKERS} -ns ${NSIGEVENTS} -tf ${NTIMEFRAMES} -e TGeant4 -mod "--skipModules ZDC" \
-        -trigger "external" -ini $O2DPG_ROOT/MC/config/PWGDQ/ini/GeneratorHF_bbbar_midy.ini             \
-        -genBkg pythia8 -procBkg cdiff -colBkg pp --embedding -nb ${NBKGEVENTS} \
-    -bcPatternFile ${PWD}/bcPattern_25ns_2556b_2544_2215_2332_144bpi_20injV3.root \
-    -interactionRate 500000 --mft-reco-full 
 
+
+${O2DPG_ROOT}/MC/bin/o2dpg_sim_workflow.py -eCM 13600 -gen external -j ${NWORKERS} -ns ${NSIGEVENTS} -tf ${NTIMEFRAMES} -e TGeant4 -mod "--skipModules ZDC" \
+        -trigger "external" -ini $O2DPG_ROOT/MC/config/PWGDQ/ini/GeneratorHF_bbbarToBplus_midy.ini  \
+        -genBkg pythia8 -procBkg inel -colBkg pp --embedding -nb ${NBKGEVENTS} \
+        -interactionRate 500000 -bcPatternFile ${PWD}/bcPattern_25ns_2556b_2544_2215_2332_144bpi_20injV3.root -confKey "Diamond.width[2]=6" \
+    --mft-reco-full
 
 
 export FAIRMQ_IPC_PREFIX=./

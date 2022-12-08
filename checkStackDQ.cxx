@@ -13,7 +13,6 @@
 
 #include "SimulationDataFormat/MCTrack.h"
 #include "SimulationDataFormat/MCTruthContainer.h"
-#include "SimulationDataFormat/Stack.h"
 #include "SimulationDataFormat/TrackReference.h"
 #include "Steer/MCKinematicsReader.h"
 #include "TFile.h"

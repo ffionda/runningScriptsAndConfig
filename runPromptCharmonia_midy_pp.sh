@@ -18,11 +18,13 @@ NTIMEFRAMES=${NTIMEFRAMES:-5}
 export ALICEO2_CCDB_LOCALCACHE=$PWD/.ccdb
 
 
-${O2DPG_ROOT}/MC/bin/o2dpg_sim_workflow.py --noIPC 1 -eCM 900 -gen external -j ${NWORKERS} -ns ${NSIGEVENTS} -tf ${NTIMEFRAMES} -e TGeant4 \
+${O2DPG_ROOT}/MC/bin/o2dpg_sim_workflow.py -eCM 13600 -gen external -j ${NWORKERS} -ns ${NSIGEVENTS} -tf ${NTIMEFRAMES} -e TGeant4 \
     -mod "--skipModules ZDC" \
     -confKey "GeneratorExternal.fileName=${O2DPG_ROOT}/MC/config/PWGDQ/external/generator/GeneratorCocktailPromptCharmoniaToElectronEvtGen_pp13TeV.C;GeneratorExternal.funcName=GeneratorCocktailPromptCharmoniaToElectronEvtGen_pp13TeV();Diamond.width[2]=6"         \
     -genBkg pythia8 -procBkg cdiff -colBkg pp --embedding -nb ${NBKGEVENTS} \
-    -confKeyBkg "Diamond.width[2]=6" -interactionRate 2000
+    -interactionRate 500000                                                 \
+    -confKeyBkg "Diamond.width[2]=6"                                        \
+    -bcPatternFile ${PWD}/bcPattern_25ns_2556b_2544_2215_2332_144bpi_20injV3.root --mft-reco-full
 
 export FAIRMQ_IPC_PREFIX=./
 # run workflow (highly-parallel)
